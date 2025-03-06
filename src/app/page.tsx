@@ -36,8 +36,6 @@ export default function Home() {
     ];
     const aiMessage = await modelWithMergeRequestTool.invoke(messages);
 
-    messages.push(aiMessage);
-
     if (!aiMessage.tool_calls) {
       throw new Error("No tool calls found");
     }

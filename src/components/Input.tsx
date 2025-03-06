@@ -1,4 +1,13 @@
-export const Input = ({ label, value, onChange, inputProps }) => {
+import { ChangeEvent, InputHTMLAttributes } from "react";
+
+export interface InputProps {
+  label?: string;
+  value: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  inputProps?: InputHTMLAttributes<HTMLInputElement>;
+}
+
+export const Input = ({ label, value, onChange, inputProps }: InputProps) => {
   return (
     <div>
       {label && (
